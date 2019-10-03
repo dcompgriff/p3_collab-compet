@@ -1254,3 +1254,16 @@
 Episode 640	Average Score: 0.11
 Episode 650	Average Score: 0.12
 Episode 660	Average Score: 0.12
+Episode 670	Average Score: 0.15
+Episode 680	Average Score: 0.15
+Episode 690	Average Score: 0.14
+Episode 700	Average Score: 0.15
+Episode 710	Average Score: 0.15
+Episode 720	Average Score: 0.15
+Episode 730	Average Score: 0.14
+Episode 740	Average Score: 0.15
+Episode 750	Average Score: 0.18
+Episode 760	Average Score: 0.21
+Episode 770	Average Score: 0.29
+Episode 780	Average Score: 0.36
+Episode 790	Average Score: 0.42
