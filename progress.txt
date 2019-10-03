@@ -970,3 +970,287 @@
 Episode 250	Average Score: 0.08
 Episode 260	Average Score: 0.07
 Episode 270	Average Score: 0.08
+Episode 280	Average Score: 0.08
+Episode 290	Average Score: 0.08
+Episode 300	Average Score: 0.08
+Episode 310	Average Score: 0.08
+Episode 320	Average Score: 0.08
+Episode 330	Average Score: 0.09
+Episode 340	Average Score: 0.09
+Episode 350	Average Score: 0.09
+Episode 360	Average Score: 0.09
+Episode 370	Average Score: 0.10
+Episode 380	Average Score: 0.10
+Episode 390	Average Score: 0.10
+Episode 10	Average Score: 0.00
+Episode 20	Average Score: 0.00
+Episode 30	Average Score: 0.00
+Episode 40	Average Score: 0.00
+Episode 50	Average Score: 0.00
+Episode 60	Average Score: 0.00
+Episode 70	Average Score: 0.00
+Episode 80	Average Score: 0.00
+Episode 90	Average Score: 0.00
+Episode 100	Average Score: 0.00
+Episode 10	Average Score: 0.00
+Episode 20	Average Score: 0.00
+Episode 30	Average Score: 0.00
+Episode 40	Average Score: 0.00
+Episode 50	Average Score: 0.00
+Episode 60	Average Score: 0.00
+Episode 70	Average Score: 0.00
+Episode 80	Average Score: 0.00
+Episode 90	Average Score: 0.00
+Episode 100	Average Score: 0.00
+Episode 10	Average Score: 0.00
+Episode 20	Average Score: 0.00
+Episode 30	Average Score: 0.00
+Episode 40	Average Score: 0.00
+Episode 50	Average Score: 0.00
+Episode 60	Average Score: 0.00
+Episode 70	Average Score: 0.00
+Episode 80	Average Score: 0.00
+Episode 90	Average Score: 0.00
+Episode 100	Average Score: 0.00
+Episode 10	Average Score: 0.00
+Episode 20	Average Score: 0.00
+Episode 30	Average Score: 0.00
+Episode 40	Average Score: 0.00
+Episode 50	Average Score: 0.00
+Episode 60	Average Score: 0.00
+Episode 70	Average Score: 0.00
+Episode 80	Average Score: 0.00
+Episode 90	Average Score: 0.00
+Episode 100	Average Score: 0.00
+Episode 10	Average Score: 0.00
+Episode 20	Average Score: 0.00
+Episode 30	Average Score: 0.01
+Episode 40	Average Score: 0.01
+Episode 50	Average Score: 0.01
+Episode 60	Average Score: 0.01
+Episode 70	Average Score: 0.01
+Episode 10	Average Score: 0.00
+Episode 20	Average Score: 0.01
+Episode 30	Average Score: 0.01
+Episode 40	Average Score: 0.01
+Episode 50	Average Score: 0.01
+Episode 60	Average Score: 0.01
+Episode 70	Average Score: 0.01
+Episode 80	Average Score: 0.01
+Episode 90	Average Score: 0.02
+Episode 100	Average Score: 0.02
+Episode 110	Average Score: 0.03
+Episode 120	Average Score: 0.03
+Episode 130	Average Score: 0.03
+Episode 140	Average Score: 0.03
+Episode 150	Average Score: 0.04
+Episode 160	Average Score: 0.04
+Episode 170	Average Score: 0.04
+Episode 180	Average Score: 0.04
+Episode 190	Average Score: 0.04
+Episode 200	Average Score: 0.04
+Episode 10	Average Score: 0.00
+Episode 20	Average Score: 0.00
+Episode 30	Average Score: 0.00
+Episode 40	Average Score: 0.00
+Episode 50	Average Score: 0.00
+Episode 60	Average Score: 0.00
+Episode 70	Average Score: 0.00
+Episode 10	Average Score: 0.00
+Episode 20	Average Score: 0.00
+Episode 30	Average Score: 0.00
+Episode 40	Average Score: 0.00
+Episode 50	Average Score: 0.00
+Episode 10	Average Score: 0.00
+Episode 20	Average Score: 0.01
+Episode 30	Average Score: 0.02
+Episode 40	Average Score: 0.02
+Episode 50	Average Score: 0.02
+Episode 60	Average Score: 0.02
+Episode 70	Average Score: 0.02
+Episode 80	Average Score: 0.02
+Episode 90	Average Score: 0.02
+Episode 100	Average Score: 0.02
+Episode 110	Average Score: 0.02
+Episode 120	Average Score: 0.02
+Episode 130	Average Score: 0.02
+Episode 140	Average Score: 0.02
+Episode 150	Average Score: 0.02
+Episode 160	Average Score: 0.03
+Episode 170	Average Score: 0.03
+Episode 180	Average Score: 0.03
+Episode 190	Average Score: 0.03
+Episode 200	Average Score: 0.04
+Episode 210	Average Score: 0.04
+Episode 220	Average Score: 0.04
+Episode 230	Average Score: 0.04
+Episode 240	Average Score: 0.04
+Episode 250	Average Score: 0.04
+Episode 260	Average Score: 0.04
+Episode 270	Average Score: 0.04
+Episode 280	Average Score: 0.04
+Episode 290	Average Score: 0.04
+Episode 300	Average Score: 0.04
+Episode 310	Average Score: 0.04
+Episode 320	Average Score: 0.04
+Episode 330	Average Score: 0.04
+Episode 340	Average Score: 0.04
+Episode 350	Average Score: 0.04
+Episode 360	Average Score: 0.04
+Episode 370	Average Score: 0.04
+Episode 380	Average Score: 0.04
+Episode 390	Average Score: 0.04
+Episode 400	Average Score: 0.04
+Episode 410	Average Score: 0.04
+Episode 420	Average Score: 0.04
+Episode 430	Average Score: 0.04
+Episode 440	Average Score: 0.05
+Episode 450	Average Score: 0.05
+Episode 460	Average Score: 0.05
+Episode 470	Average Score: 0.05
+Episode 480	Average Score: 0.05
+Episode 490	Average Score: 0.05
+Episode 500	Average Score: 0.05
+Episode 510	Average Score: 0.05
+Episode 520	Average Score: 0.05
+Episode 530	Average Score: 0.05
+Episode 540	Average Score: 0.05
+Episode 550	Average Score: 0.05
+Episode 560	Average Score: 0.05
+Episode 570	Average Score: 0.05
+Episode 10	Average Score: 0.00
+Episode 20	Average Score: 0.00
+Episode 30	Average Score: 0.00
+Episode 40	Average Score: 0.00
+Episode 50	Average Score: 0.00
+Episode 10	Average Score: 0.00
+Episode 20	Average Score: 0.02
+Episode 30	Average Score: 0.01
+Episode 40	Average Score: 0.01
+Episode 50	Average Score: 0.01
+Episode 10	Average Score: 0.00
+Episode 20	Average Score: 0.00
+Episode 30	Average Score: 0.00
+Episode 40	Average Score: 0.00
+Episode 50	Average Score: 0.00
+Episode 60	Average Score: 0.00
+Episode 70	Average Score: 0.00
+Episode 80	Average Score: 0.01
+Episode 90	Average Score: 0.01
+Episode 100	Average Score: 0.02
+Episode 10	Average Score: 0.00
+Episode 20	Average Score: 0.00
+Episode 30	Average Score: 0.00
+Episode 40	Average Score: 0.00
+Episode 50	Average Score: 0.00
+Episode 60	Average Score: 0.00
+Episode 70	Average Score: 0.00
+Episode 80	Average Score: 0.00
+Episode 90	Average Score: 0.00
+Episode 100	Average Score: 0.00
+Episode 10	Average Score: 0.00
+Episode 20	Average Score: 0.00
+Episode 30	Average Score: 0.01
+Episode 40	Average Score: 0.01
+Episode 50	Average Score: 0.01
+Episode 60	Average Score: 0.01
+Episode 70	Average Score: 0.01
+Episode 80	Average Score: 0.00
+Episode 90	Average Score: 0.00
+Episode 100	Average Score: 0.00
+Episode 10	Average Score: 0.00
+Episode 20	Average Score: 0.00
+Episode 30	Average Score: 0.00
+Episode 40	Average Score: 0.00
+Episode 50	Average Score: 0.00
+Episode 60	Average Score: 0.00
+Episode 70	Average Score: 0.00
+Episode 80	Average Score: 0.00
+Episode 90	Average Score: 0.00
+Episode 100	Average Score: 0.00
+Episode 10	Average Score: 0.00
+Episode 20	Average Score: 0.00
+Episode 30	Average Score: 0.00
+Episode 40	Average Score: 0.00
+Episode 50	Average Score: 0.00
+Episode 60	Average Score: 0.00
+Episode 70	Average Score: 0.00
+Episode 80	Average Score: 0.00
+Episode 90	Average Score: 0.00
+Episode 100	Average Score: 0.00
+Episode 10	Average Score: 0.00
+Episode 20	Average Score: 0.01
+Episode 30	Average Score: 0.01
+Episode 40	Average Score: 0.01
+Episode 50	Average Score: 0.01
+Episode 60	Average Score: 0.01
+Episode 70	Average Score: 0.01
+Episode 80	Average Score: 0.01
+Episode 90	Average Score: 0.01
+Episode 100	Average Score: 0.01
+Episode 10	Average Score: 0.00
+Episode 20	Average Score: 0.01
+Episode 30	Average Score: 0.01
+Episode 40	Average Score: 0.01
+Episode 50	Average Score: 0.01
+Episode 60	Average Score: 0.01
+Episode 70	Average Score: 0.02
+Episode 80	Average Score: 0.02
+Episode 90	Average Score: 0.02
+Episode 100	Average Score: 0.02
+Episode 110	Average Score: 0.02
+Episode 120	Average Score: 0.03
+Episode 130	Average Score: 0.03
+Episode 140	Average Score: 0.03
+Episode 150	Average Score: 0.03
+Episode 160	Average Score: 0.04
+Episode 170	Average Score: 0.04
+Episode 180	Average Score: 0.04
+Episode 190	Average Score: 0.04
+Episode 200	Average Score: 0.04
+Episode 210	Average Score: 0.04
+Episode 220	Average Score: 0.04
+Episode 230	Average Score: 0.04
+Episode 240	Average Score: 0.04
+Episode 250	Average Score: 0.04
+Episode 260	Average Score: 0.05
+Episode 270	Average Score: 0.05
+Episode 280	Average Score: 0.05
+Episode 290	Average Score: 0.05
+Episode 300	Average Score: 0.06
+Episode 310	Average Score: 0.06
+Episode 320	Average Score: 0.07
+Episode 330	Average Score: 0.07
+Episode 340	Average Score: 0.07
+Episode 350	Average Score: 0.07
+Episode 360	Average Score: 0.07
+Episode 370	Average Score: 0.07
+Episode 380	Average Score: 0.07
+Episode 390	Average Score: 0.07
+Episode 400	Average Score: 0.08
+Episode 410	Average Score: 0.08
+Episode 420	Average Score: 0.07
+Episode 430	Average Score: 0.07
+Episode 440	Average Score: 0.08
+Episode 450	Average Score: 0.07
+Episode 460	Average Score: 0.07
+Episode 470	Average Score: 0.07
+Episode 480	Average Score: 0.09
+Episode 490	Average Score: 0.10
+Episode 500	Average Score: 0.10
+Episode 510	Average Score: 0.10
+Episode 520	Average Score: 0.11
+Episode 530	Average Score: 0.11
+Episode 540	Average Score: 0.10
+Episode 550	Average Score: 0.10
+Episode 560	Average Score: 0.11
+Episode 570	Average Score: 0.11
+Episode 580	Average Score: 0.10
+Episode 590	Average Score: 0.09
+Episode 600	Average Score: 0.09
+Episode 610	Average Score: 0.09
+Episode 620	Average Score: 0.10
+Episode 630	Average Score: 0.11
+Episode 640	Average Score: 0.11
+Episode 650	Average Score: 0.12
+Episode 660	Average Score: 0.12

@@ -13,19 +13,40 @@ import torch
 import torch.nn.functional as F
 import torch.optim as optim
 
-BUFFER_SIZE = int(1e6)  # replay buffer size
-BATCH_SIZE = 128        # minibatch size
-GAMMA = 0.99 #0.99            # discount factor
-TAU = 8e-3              # for soft update of target parameters
-LR_ACTOR = 1e-4         # learning rate of the actor 
-LR_CRITIC = 1e-4        # learning rate of the critic
-WEIGHT_DECAY = 0 #0.0001   # L2 weight decay
+# BUFFER_SIZE = int(1e6)  # replay buffer size
+# BATCH_SIZE = 128        # minibatch size
+# GAMMA = 0.99 #0.99            # discount factor
+# TAU = 8e-3              # for soft update of target parameters
+# LR_ACTOR = 1e-4         # learning rate of the actor 
+# LR_CRITIC = 1e-4        # learning rate of the critic
+# WEIGHT_DECAY = 0 #0.0001   # L2 weight decay
 EPSILON = 1.0           # explore->exploit noise process added to act step
-# EPSILON_DECAY = 1e-6    # decay rate for noise process
 EPSILON_DECAY = 1.0 # 0.999
 
-UPDATE_TIMES = 5 # Update the network this many times when the learn function is called.
-STEPS_TO_UPDATE = 1 # Call the learn function 'UPDATE_TIMES' every 'STEPS_TO_UPDATE'
+# EPS_START = 5.0         # initial value for epsilon in noise decay process in Agent.act()
+# EPS_EP_END = 300        # episode to end the noise decay process
+# EPS_FINAL = 0           # final value for epsilon after decay
+
+# OU_SIGMA = 0.2          # Ornstein-Uhlenbeck noise parameter, volatility
+# OU_THETA = 0.15         # Ornstein-Uhlenbeck noise parameter, speed of mean reversion
+
+# UPDATE_TIMES = 5 # Update the network this many times when the learn function is called.
+# STEPS_TO_UPDATE = 1 # Call the learn function 'UPDATE_TIMES' every 'STEPS_TO_UPDATE'
+
+BUFFER_SIZE = int(1e6)  # replay buffer size
+BATCH_SIZE = 128        # minibatch size
+LR_ACTOR = 1e-3         # learning rate of the actor
+LR_CRITIC = 1e-3        # learning rate of the critic
+WEIGHT_DECAY = 0        # L2 weight decay
+STEPS_TO_UPDATE = 1         # learning timestep interval
+UPDATE_TIMES = 1           # number of learning passes
+GAMMA = 0.99            # discount factor
+TAU = 8e-3              # for soft update of target parameters
+OU_SIGMA = 0.2          # Ornstein-Uhlenbeck noise parameter, volatility
+OU_THETA = 0.15         # Ornstein-Uhlenbeck noise parameter, speed of mean reversion
+EPS_START = 1         # initial value for epsilon in noise decay process in Agent.act()
+EPS_EP_END = 1000        # episode to end the noise decay process
+EPS_FINAL = 0.01           # final value for epsilon after decay
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
@@ -58,7 +79,8 @@ class Agents():
         self.action_size = action_size
         self.seed = random.seed(random_seed)
         self.num_agents = num_agents
-        self.epsilon = EPSILON
+        self.eps = EPS_START
+        self.eps_decay = EPSILON_DECAY# 1/(EPS_EP_END*UPDATE_TIMES)  # set decay rate based on epsilon end target
         
         # Set up the actor and critic networks
         # Actor Network (w/ Target Network)
@@ -66,8 +88,8 @@ class Agents():
         self.actor_target_list = []
         self.actor_optimizer_list = []
         for i in range(num_agents):
-            self.actor_local_list.append(Actor(state_size, action_size, random_seed).to(device))
-            self.actor_target_list.append(Actor(state_size, action_size, random_seed).to(device))
+            self.actor_local_list.append(Actor(state_size, action_size, num_agents, random_seed).to(device))
+            self.actor_target_list.append(Actor(state_size, action_size, num_agents, random_seed).to(device))
             self.actor_optimizer_list.append(optim.Adam(self.actor_local_list[i].parameters(), lr=LR_ACTOR))
 
         # Make a critic per agent.
@@ -112,17 +134,17 @@ class Agents():
 
     def act(self, states, add_noise=True):
         """Returns actions for given states for each agent as per current policy."""
-        
         actions = []
-        for i, state in enumerate(states):
-            state = torch.from_numpy(np.array([state])).float().to(device)
+        for i in range(self.num_agents):
+            state = torch.from_numpy(states).float().to(device)
             self.actor_local_list[i].eval()
             with torch.no_grad():
                 action = self.actor_local_list[i](state).cpu().data.numpy()
             self.actor_local_list[i].train()
             if add_noise:
-    #             import pdb; pdb.set_trace()
-                action += self.epsilon * self.noise_list[i].sample()
+                noise = self.noise_list[i].sample()
+#                 import pdb; pdb.set_trace()
+                action += self.eps * noise
             actions.append(action)
         actions = np.array(actions).reshape((self.num_agents, self.action_size))
         return np.clip(actions, -1, 1)
@@ -154,29 +176,35 @@ class Agents():
         Update the learning estimates so that the agents 
         
         '''
-        
-        
-        
+   
         state_sets, action_sets, reward_sets, next_state_sets, dones = experiences
 
         # ---------------------------- update critic ---------------------------- #
-        # Get predicted next-state actions and Q values from target models
-        
-        # Make next_states vector with next state for each agent to feed to the policy.
-#         next_states = np.array_split(next_state_sets, self.num_agents, axis=1)
-#         np.array_split(np.array([[0,0,1,1], [2,2,3,3]]), 2, axis=1)
-
         
         # GENERATE NEXT ACTIONS FOR EACH AGENT. a'1, a'2, ..., a'N
         # Convert the matrix into a list of individual states to predict actions for.
+#         next_states = next_state_sets.reshape((BATCH_SIZE*self.num_agents, self.state_size))
+#         # Predict actions for each state in the list.
+#         actions_next_list = []
+#         # self.num_agents
+#         for i in range(self.num_agents):
+#             # Get the index of next states for agent i.
+#             inx = np.array([k for k in range(len(next_states)) if k%(self.num_agents)==i])
+#             # Get the next action for each next state for agent i.
+#             actions_next = self.actor_target_list[i](next_states[inx])
+#             # Add the next actions for this agent to the list.
+#             actions_next_list.append(actions_next.reshape(-1, self.action_size))
+            
+#         # Roll the actions into next_action_sets by using the torch cat command.
+#         action_next_sets = torch.cat(tuple(actions_next_list), dim = 1)
+
         next_states = next_state_sets.reshape((BATCH_SIZE*self.num_agents, self.state_size))
         # Predict actions for each state in the list.
         actions_next_list = []
+        # self.num_agents
         for i in range(self.num_agents):
-            # Get the index of next states for agent i.
-            inx = np.array([k for k in range(len(next_states)) if k%(self.num_agents)==i])
-            # Get the next action for each next state for agent i.
-            actions_next = self.actor_target_list[i](next_states[inx])
+            # Get the next action for each next state set for agent i.
+            actions_next = self.actor_target_list[i](next_state_sets)
             # Add the next actions for this agent to the list.
             actions_next_list.append(actions_next.reshape(-1, self.action_size))
             
@@ -199,12 +227,14 @@ class Agents():
 
             # ---------------------------- update actor ---------------------------- #
             # Select only states related to agent i.
+#             states = state_sets.reshape((BATCH_SIZE*self.num_agents, self.state_size))
+#             inx = np.array([k for k in range(len(states)) if k%(self.num_agents)==i])
+#             states = states[inx]
             states = state_sets.reshape((BATCH_SIZE*self.num_agents, self.state_size))
             inx = np.array([k for k in range(len(states)) if k%(self.num_agents)==i])
-            states = states[inx]
             
             # Compute action predictions for current agent and its states.
-            actions_pred = self.actor_local_list[i](states)
+            actions_pred = self.actor_local_list[i](state_sets)
             
             # Copy action_sets, and reset the agent's actual actions with its predicted actions.
             actions = action_sets.clone().reshape((BATCH_SIZE*self.num_agents, self.action_size))
@@ -227,9 +257,14 @@ class Agents():
             self.soft_update(self.actor_local_list[i], self.actor_target_list[i], TAU)
 
         # Decay noise and reset.
-        # self.epsilon -= EPSILON_DECAY
-        self.epsilon = self.epsilon * EPSILON_DECAY
-#         self.noise.reset()
+        self.eps = self.eps * EPSILON_DECAY
+        self.reset()
+#         self.eps -= self.eps_decay
+#         self.eps = max(self.eps, EPS_FINAL)
+#         self.reset()
+#         for i in range(self.num_agents):
+#             self.noise_list[i].reset()
+
 
     def soft_update(self, local_model, target_model, tau):
         """Soft update model parameters.
@@ -247,7 +282,7 @@ class Agents():
 class OUNoise:
     """Ornstein-Uhlenbeck process."""
 
-    def __init__(self, size, seed, mu=0., theta=0.15, sigma=.05):
+    def __init__(self, size, seed, mu=0., theta=OU_THETA, sigma=OU_SIGMA):
         """Initialize parameters and noise process."""
         self.mu = mu * np.ones(size)
         self.theta = theta
@@ -262,7 +297,6 @@ class OUNoise:
     def sample(self):
         """Update internal state and return it as a noise sample."""
         x = self.state
-#         dx = self.sigma * np.array([((random.random()*2)-1.0) for i in range(len(x))]) # 
         dx = self.theta * (self.mu - x) + self.sigma * np.array([random.random() for i in range(len(x))])
         self.state = x + dx
         return self.state
