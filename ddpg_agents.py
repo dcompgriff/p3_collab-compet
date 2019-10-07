@@ -204,6 +204,16 @@ class Agents():
             actions_pred_sets = actions.reshape((BATCH_SIZE, self.action_size * self.num_agents))          
             
             # Compute the actor loss given the state sets and predicted action sets.
+            # Loss Function:
+            #     1.) Loss of actor = The Negative Average Q-Value of Actor 
+            #         Predicted Actions given the True States
+            #     2.) Negative because we want to maximize the 'value' produced 
+            #         from the Q-value network.
+            #     3.) Average because it's a policy gradient method, and we are estimating 
+            #         the average gradient of the loss, or using the 
+            #         'average of loss from actual episodes' as a statistical estimator of 
+            #         'true average loss over all possible episodes'
+            #
             actor_loss = -self.critic_local_list[i](state_sets, actions_pred_sets).mean()
             # Minimize the loss
             self.actor_optimizer_list[i].zero_grad()
