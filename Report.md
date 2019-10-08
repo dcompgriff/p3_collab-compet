@@ -28,7 +28,7 @@ To solve the overall problem, I implemented a variant of the MADDPG algorithm. T
 
 ![alt text](https://github.com/dcompgriff/p3_collab-compet/blob/master/MADDPG_RL_Structure.png "MADDPG Original Algorithm")
 
-![alt text](https://github.com/dcompgriff/p3_collab-compet/blob/master/MY_MADDPG_RL_Structure.png "MADDPG Variant Algorithm")
+![alt text](https://github.com/dcompgriff/p3_collab-compet/blob/master/My_MADDPG_RL_Structure.png "MADDPG Variant Algorithm")
 
 
 ### Approaches
