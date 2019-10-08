@@ -99,7 +99,7 @@ The agent achieved a performance of > 0.5 on average after 798 episodes. This pe
 
 ![alt text](https://github.com/dcompgriff/p3_collab-compet/blob/master/full_performance_chart.png "MADDPG Variant Algorithm Performance")
 
-![alt text](https://github.com/dcompgriff/p3_collab-compet/blob/master/long_term_performance_chart.png "MADDPG Variant Algorithm Saturated Performance")
+![alt text](https://github.com/dcompgriff/p3_collab-compet/blob/master/long_term_performance.png "MADDPG Variant Algorithm Saturated Performance")
 
 
 ## Ideas for Future Work
